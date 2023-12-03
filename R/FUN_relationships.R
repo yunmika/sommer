@@ -38,6 +38,7 @@ ARMA = function(x, rho=0.25, lambda=0.25) {
 A.mat <- function(X, min.MAF=0, return.imputed=FALSE){
   ################
   ## impute
+  print("test11")
   missingCheck <- which(is.na(X), arr.ind = TRUE)
   if(nrow(missingCheck) > 0){
     cat("Imputing markers with mean value\n")
