@@ -260,6 +260,7 @@ arma::mat amat(const arma::mat & Xo, const bool & vanraden, double minMAF) {
   arma::mat A(n,n);
 
   if(vanraden == true){ //  regular vanRaden 
+    cout << "Hello World"
 
     arma::rowvec ms012 = mean( X+1, 0 ); // means of columns
     arma::rowvec freq = ms012/2;
