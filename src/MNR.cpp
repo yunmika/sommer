@@ -286,7 +286,7 @@ arma::mat amat(const arma::mat & Xo, const bool & vanraden, double minMAF) {
   }
 
 
-  cout << "test1"
+  std::cout << "test1"
   return A;
 }
 
