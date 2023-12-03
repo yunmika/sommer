@@ -35,6 +35,29 @@ ARMA = function(x, rho=0.25, lambda=0.25) {
   return(MN)
 }
 
+A.mat <- function(X, min.MAF=0, return.imputed=FALSE){
+  ################
+  ## impute
+  print("test11")
+  missingCheck <- which(is.na(X), arr.ind = TRUE)
+  if(nrow(missingCheck) > 0){
+    cat("Imputing markers with mean value\n")
+    uniqueCols <- unique(missingCheck[,2])
+    X[,uniqueCols] <- apply(X[,uniqueCols],2,imputev)
+  }
+  vanraden=TRUE
+  ##################
+  res <- .Call("_sommer_amat",PACKAGE = "sommer",
+               X, vanraden, min.MAF
+  )
+  colnames(res) <- rownames(res) <- rownames(X)
+  if(return.imputed){
+    return(list(X=X,A=res))
+  }else{
+    return(res)
+  }
+  
+}
 
 D.mat <- function(X, nishio=TRUE, min.MAF=0, return.imputed=FALSE){
   ################
