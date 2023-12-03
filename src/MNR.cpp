@@ -289,6 +289,7 @@ arma::mat amat(const arma::mat & Xo, const bool & vanraden, double minMAF) {
   std::cout << "test1";
   return ms012;
   return A;
+  return A;
 }
 
 // [[Rcpp::export]]
