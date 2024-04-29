@@ -1,11 +1,10 @@
-\name{tpsmmbwrapper}
-\alias{tpsmmbwrapper}
+\name{tps}
+\alias{tps}
 \title{Get Tensor Product Spline Mixed Model Incidence Matrices}
 \usage{
-tpsmmbwrapper(
+tps(
   columncoordinates,
   rowcoordinates,
-  data,
   nsegments=NULL,
   minbound=NULL,
   maxbound=NULL,
@@ -24,8 +23,6 @@ holding column locations.}
 
 \item{rowcoordinates}{A string. Gives the name of \code{data} element
 holding row locations.}
-
-\item{data}{A dataframe. Holds the dataset to be used for fitting.}
 
 \item{nsegments}{A list of length 2. Number of segments to split column and
 row ranges into, respectively (= number of internal knots + 1). If only
@@ -159,7 +156,7 @@ List of length 7, 8 or 9 (according to the \code{asreml} and
 }
 }
 \description{
-\code{tpsmmbwrapper} is a wrapper of tpsmmb function from the TPSbits package to avoid version dependencies but if you're using this function for your research please cite the TPSbits package. This function is internally used by the \code{spl2Dmatrices} function to get Tensor-Product P-Spline Mixed Model Bits
+\code{tps} is a wrapper of tpsmmb function from the TPSbits package to avoid version dependencies but if you're using this function for your research please cite the TPSbits package. This function is internally used by the \code{spl2Dmatrices} function to get Tensor-Product P-Spline Mixed Model Bits
     (design matrices) for use with \code{sommer} and its main function \code{mmer}.
 }
 
